@@ -36,8 +36,6 @@ const Post = ({ state, actions, libraries }) => {
   // Get the html2react component.
   const Html2React = libraries.html2react.Component;
 
-  console.log(post)
-
   /**
    * Once the post has loaded in the DOM, prefetch both the
    * home posts and the list component so if the user visits
@@ -50,9 +48,9 @@ const Post = ({ state, actions, libraries }) => {
 
   // Load the post, but only if the data is ready.
   return data.isReady ? (
-    <Container>
+    <Container className="page-container">
       <div>
-        <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+        <Title className="page-title" dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
 
         {/* Hide author and date on pages */}
         {!data.isPage && (

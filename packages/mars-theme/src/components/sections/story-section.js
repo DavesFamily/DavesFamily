@@ -17,7 +17,7 @@ const Story = ({ state, libraries, contentBlock }) => {
             <div className="description clrwhite"><Html2React html={contentBlock.description} /></div>
           </div>
           <div className="col-sm-3">
-            <Image src={contentBlock.image.sizes.medium} width="100" />
+            <Image src={contentBlock.image.sizes.medium} />
         </div>
         </div>
         

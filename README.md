@@ -49,4 +49,7 @@ npm i react-visibility-sensor
 ```
 npm i react-countdown
 ```
+```
+npm i react-cookie
+```
 

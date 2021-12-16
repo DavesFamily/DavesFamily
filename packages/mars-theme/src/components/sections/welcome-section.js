@@ -30,9 +30,10 @@ const Welcome = ({ state, libraries, contentBlock }) => {
             <h2 className="" >{contentBlock.heading}</h2>
             <div className="description">{contentBlock.description}</div>
             <div className="subheading">{contentBlock.sub_heading}</div>
-            <div className="left-small-img">
+            {contentBlock.image && 
+              <div className="left-small-img">
               <Image src={contentBlock.image.sizes.medium} />
-            </div>
+            </div> }
             <div className="description-last">{contentBlock.bottom_text}</div>
           </div>
           <div className="welcome-slider-main-sec col-sm-6">

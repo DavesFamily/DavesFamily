@@ -19,7 +19,7 @@ const Nav = ({ state, actions, libraries}) => {
             else if(item.title=='Discord') { socialClass='social-discord'}
             return(
               <li key={item.ID} className={socialClass} >
-                <Link link={item.url}>
+                <Link link={item.url} target="_blank">
                   {item.title}
                 </Link>
               </li>

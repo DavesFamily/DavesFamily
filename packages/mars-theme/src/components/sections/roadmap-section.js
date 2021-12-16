@@ -14,12 +14,12 @@ import { easeQuadInOut } from "d3-ease";
 const RoadMap = ({ state, libraries, contentBlock }) => {
 
   const Html2React = libraries.html2react.Component;
-  const [visibleCounters, setVisibleCounters] = useState(-1);
+  const [visibleCounters, setVisibleCounters] = useState([]);
 
   const markAsLoaded = (index) => {
 
     if(visibleCounters<index)
-      setVisibleCounters(index);
+      setVisibleCounters([...visibleCounters,index])
   }
 
   return(
@@ -40,7 +40,7 @@ const RoadMap = ({ state, libraries, contentBlock }) => {
                     <div className="percentage-main-sec-cls" key={index}>
                       <div className="percentage-cls">
                         <div className="percentage-inner-cls">
-                        <VisibilitySensor active={(index<=visibleCounters)?false:true} onChange={(isVisible) => { if(isVisible) markAsLoaded(index)}}>
+                        <VisibilitySensor active={(visibleCounters.includes(index))?false:true} onChange={(isVisible) => { if(isVisible) markAsLoaded(index)}}>
                         {({ isVisible }) => {
                            var percentage = isVisible ? content.percentage : 0;
                            return(
@@ -57,7 +57,7 @@ const RoadMap = ({ state, libraries, contentBlock }) => {
                                   value={value}
                                   text={`${roundedValue}%`}
                                   /* This is important to include, because if you're fully managing the
-                            animation yourself, you'll want to disable the CSS animation. */
+                                 animation yourself, you'll want to disable the CSS animation. */
                                   styles={buildStyles({ pathTransition: "none", textSize: '24px'})}
                                 >
                                   <span className="counter-text">{content.percentage_text}</span>
@@ -78,7 +78,7 @@ const RoadMap = ({ state, libraries, contentBlock }) => {
               </div>
               <div className="looking-for-main-cls" >
                 <div className="looking-left-img">
-                  <Image src={contentBlock.bottom_image.sizes.medium} width="100" />
+                  <Image src={contentBlock.bottom_image.sizes.medium} />
                 </div>
                 <div className="looking-right-cont">
                   <h2 className="paddbottom10 clryellow" >{contentBlock.bottom_content_heading}</h2>

@@ -55,15 +55,15 @@ const About = ({ state, libraries, contentBlock }) => {
                     </div>
                 </div>
                 <div className="total-banace-cls">
-                <div className="total-text-cls">
-                    Total Balance: <span id="">{currentSum}ETH</span>
-                </div>
-                <div className="button-cls">
-                    <button className="AddBtn" >
-                        MINT NOW!
-                    </button>
-                </div>
-            </div>
+                  <div className="total-text-cls">
+                      Total Balance: <span id="">{currentSum}ETH</span>
+                  </div>
+                  <div className="button-cls">
+                      <button className="AddBtn" >
+                          MINT NOW!
+                      </button>
+                  </div>
+              </div>
             </div>
 )};
 

@@ -11,7 +11,7 @@ const About = ({ state, libraries, contentBlock }) => {
         <div className="container max-width-full paddtop100 paddbottom100">
           <div className="row">
             <div className="abt-img left-img">
-              <Image src={contentBlock.image.sizes.medium} width="100" />
+              <Image src={contentBlock.image.sizes.medium} />
             </div>
             <div className="abt-cnt">
               <h2 className="paddbottom50 clryellow">{contentBlock.heading}</h2>

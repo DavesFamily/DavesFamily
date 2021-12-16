@@ -10,6 +10,12 @@ const Nav = ({ state, actions }) => {
   const currURL = state.router.link;
   const items = state.source.get(`/menus/${state.theme.menuUrl}`).items;
 
+  // Connect Wallet
+  const connectWallet = (e) => {
+    e.preventDefault()
+    console.log('Call event for Connect Wallet');
+  };
+
   return(
     <ul className="header_menu_list">
       {items.map((item)=>{
@@ -21,6 +27,9 @@ const Nav = ({ state, actions }) => {
           </li>
          )
       })}
+      <li key="custom">
+        <a onClick={connectWallet}>Connect Wallet</a>
+      </li>
     </ul>
   )
 };

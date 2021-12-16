@@ -80,7 +80,7 @@ const Home = ({ state, actions, libraries }) => {
     <Container>
       {pageContent.content_blocks.map((block,index)=>{
         return(
-          <div className="" key={index}>
+          <div key={index}>
             <SwitchCase value={block} />
           </div>
         )

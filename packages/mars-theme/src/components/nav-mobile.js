@@ -12,6 +12,13 @@ const NavRight = ({ state, actions}) => {
     document.querySelector('.header_menu_list.mobile').classList.toggle("menu_active");
     menuToggler.classList.toggle("close");
   };
+
+  // Connect Wallet
+  const connectWallet = (e) => {
+    e.preventDefault()
+    closeMenu();
+  };
+
   return(
     <ul className="header_menu_list mobile">
       {
@@ -65,6 +72,7 @@ const NavRight = ({ state, actions}) => {
           }   
         })
       }
+      <li><a href="/" onClick={connectWallet}>Connect Wallet</a></li>
       </ul>
   )
 };
