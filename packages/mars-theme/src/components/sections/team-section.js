@@ -8,7 +8,7 @@ const Team = ({ state, libraries, contentBlock }) => {
   const Html2React = libraries.html2react.Component;
 
   return(
-  <div className="team-sec paddtop100 paddbottom100" style={{  backgroundImage: `url(${contentBlock.background_image})`}}>
+  <div id="team" className="team-sec paddtop100 paddbottom100" style={{  backgroundImage: `url(${contentBlock.background_image})`}}>
         <div className="container">
           <div className="row">
             <div className="col-sm-12">

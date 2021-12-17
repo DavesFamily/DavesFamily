@@ -31,9 +31,9 @@ const NavRight = ({ state, actions}) => {
             return(
               
               <li key={item.ID} className={(currURL === '/'+item.slug+'/') ? "active" : ""}>
-                <Link link={item.url} onClick={closeMenu}>
+                <a href={item.url} onClick={closeMenu}>
                   {item.title}
-                </Link>
+                </a>
               </li>
             )
           }
@@ -59,9 +59,9 @@ const NavRight = ({ state, actions}) => {
                     childItems.map((childItem) => {
                       return(
                         <li key={childItem.ID}>
-                          <Link link={childItem.url}>
+                          <a href={childItem.url}>
                            {childItem.title}
-                          </Link>
+                          </a>
                         </li>
                       )
                     })

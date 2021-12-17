@@ -7,7 +7,7 @@ const About = ({ state, libraries, contentBlock }) => {
   const Html2React = libraries.html2react.Component;
 
   return(
-  <div className="about-sec">
+  <div id="about" className="about-sec">
         <div className="container max-width-full paddtop100 paddbottom100">
           <div className="row">
             <div className="abt-img left-img">

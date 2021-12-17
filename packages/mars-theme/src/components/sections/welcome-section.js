@@ -23,7 +23,7 @@ const Welcome = ({ state, libraries, contentBlock }) => {
   };
 
   return(
-  <div className="welcome-sec paddtop150 paddbottom100">
+  <div className="welcome-sec paddtop150 paddbottom100" style={{ backgroundImage: `url(${contentBlock.background_image})`}}>
       <div className="container ">
         <div className="row">				
           <div className="col-sm-6 text-center">

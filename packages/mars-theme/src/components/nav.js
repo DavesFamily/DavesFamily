@@ -21,9 +21,9 @@ const Nav = ({ state, actions }) => {
       {items.map((item)=>{
          return(
           <li key={item.ID} className={(currURL === '/'+item.slug+'/') ? "active" : ""}>
-            <Link link={item.url}>
+            <a href={item.url}>
               {item.title}
-            </Link>
+            </a>
           </li>
          )
       })}
