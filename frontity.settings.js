@@ -27,7 +27,18 @@ const settings = {
           "url": "https://daves.family",
           "api": "https://daves.family/wp-json",
           "homepage": "/home",
-          "postsPage":"/"
+          "postsPage":"/",
+          "reactHome":"/react-home/",
+          "data": {
+				"/": {
+				"isReady": true,
+				"isRedirection": true,
+				"is301": false,
+				"redirectionStatus": 201,
+				"isExternal": false,
+				"location": "/react-home",
+				},
+			},
         }
       }
     },
