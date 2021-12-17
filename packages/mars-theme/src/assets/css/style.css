@@ -98,6 +98,18 @@ body .roadmap-sec {background-position: top left; background-image: radial-gradi
 
 body .roadmap-sec .sub_tlt{font-size: 24px;}
 
+.welcome-sec.mint-page .row {align-items: center;}
+
+@media (max-width: 1200px){
+.count-input-div{padding: 10px;}
+.count-input-div input[type="text"]{max-width: 100px;}
+}
+
+@media (max-width: 1024px){
+.welcome-sec.mint-page .row{flex-direction: column;}
+.welcome-sec.mint-page .row .col-sm-7 {width: 100%; margin-bottom: 20px; }
+}
+
 @media (min-width: 981px){
 	body .about-sec .abt-img {width:  29.6667%;margin-right: 5.5%;}
 	body .about-sec .abt-cnt {width: 64.833%; padding-right: 20px; padding-left: 20px;}
@@ -291,6 +303,11 @@ body .looking-for-main-cls .looking-left-img img {width: 200px;}
 .Countdown-main-inner-cls span.hrs-text-cls {margin-bottom: 10px; font-size: 18px; }
 .Countdown-main-inner-cls span span.hrs-count-cls{font-size: 22px; width: 40px; height: 50px;}
 .Countdown-main-inner-cls span.counter-hrs-main-div-cls {flex-direction: column; }
+
+.counter-main-cls .mint-sec .container{width: 100%;padding: 0;}
+.counter-main-cls .mint-sec .container .fild-main-inner-cls{padding: 20px;}
+.counter-hrs-main-div-cls .hrs-text-cls{white-space: break-spaces; line-height: 1.5; }
+.welcome-sec.mint-page .row .col-sm-7{padding: 0;margin-bottom: 0px;}
 
 }
 
