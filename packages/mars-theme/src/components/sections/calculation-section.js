@@ -56,12 +56,13 @@ const About = ({ state, libraries, contentBlock }) => {
                 </div>
                 <div className="total-banace-cls">
                   <div className="total-text-cls">
-                      Total Balance: <span id="">{currentSum}ETH</span>
+                      Total Balance: <span id="">{currentSum} Ξ</span>
                   </div>
                   <div className="button-cls">
                       <button className="AddBtn" >
                           MINT NOW!
                       </button>
+                      <span className="clrwhite custo18">maximum 5 mints per txn</span>
                   </div>
               </div>
             </div>

@@ -12,6 +12,7 @@ h4{font-size: 20px;font-weight: 500;}
 h5{font-size: 18px;font-weight: 500;} 
 h6{font-size: 16px;font-weight: 500;}
 .custo24{font-size: 24px;line-height: 1.3;font-weight: 300;}
+.custo18{font-size: 18px;line-height: 20px;}
 
 .clrwhite{color: #fff;}
 .clrblack{color: #000;}
@@ -210,7 +211,7 @@ body{overflow-x: hidden; }
 .fild-main-inner-cls .counterDisplay .auto-add-count button {background: #424472; color: #e883bb; box-shadow: none; border: 0; padding: 15px 20px; margin: 0 0 0 10px; border-radius: 5px; font-family: 'Roboto',sans-serif; font-weight: 600; font-size: 20px; }
 .total-text-cls {display: flex; justify-content: space-between; color: #fff; font-family: 'alphakind',Helvetica,Arial,Lucida,sans-serif; font-size: 20px; padding: 0px 0px 30px; }
 .total-text-cls span {font-family: 'alphakind',Helvetica,Arial,Lucida,sans-serif; color: #e883bb;}
-.button-cls button.AddBtn {width: 100%; background: #e883bb; border: 0; box-shadow: none; padding: 20px 20px; border-radius: 50px; color: #fff; letter-spacing: 1px; }
+.button-cls button.AddBtn {width: 100%; background: #e883bb; border: 0; box-shadow: none; padding: 20px 20px; border-radius: 50px; color: #fff; letter-spacing: 1px; margin-bottom: 5px;}
 .button-cls button.AddBtn:hover {background: #009453; color: #fc0; }
 .total-banace-cls {padding: 0; }
 .counter-main-cls .mint-sec .container .row {margin: 0 auto; }

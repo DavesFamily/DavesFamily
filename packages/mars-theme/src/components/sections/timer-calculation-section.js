@@ -81,9 +81,6 @@ const MintSection = ({ state, libraries, contentBlock }) => {
       <div className="container ">
         <div className="row">				
           <div className="col-sm-7 text-center">
-            <h2 className="" >{contentBlock.welcome_section.heading}</h2>
-            <div className="description">{contentBlock.welcome_section.description}</div>
-            
             <div className="counter-main-cls">
               {cookies.iswalletconnected==="1" && (
                 <div className="mint-sec" >
