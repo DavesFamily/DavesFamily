@@ -28,18 +28,6 @@ const MintSection = ({ state, libraries, contentBlock }) => {
   const preSaleTime = contentBlock.pre_sale_datetime;
   const publicSaleTime = contentBlock.public_sale_datetime;
 
-  //iswalletconnected = 1/0
-  // iswhitelisted = 1/0
-
-  useEffect(() => {
-    setCookie("iswalletconnected", 1, {
-      path: "/"
-    });
-    setCookie("iswhitelisted", 1, {
-      path: "/"
-    });
-  },[]);
-
   function FormatDate(dateVal) {
 
 		var offerDate = dateVal;

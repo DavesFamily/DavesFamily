@@ -1,5 +1,7 @@
 import { connect, styled } from "frontity";
+import React, {useEffect } from 'react';
 import Link from "./link";
+import {cookie, useCookies } from "react-cookie";
 
 /**
  * Navigation Component
@@ -7,31 +9,35 @@ import Link from "./link";
  * It renders the navigation links
  */
 const Nav = ({ state, actions }) => {
-  const currURL = state.router.link;
-  const items = state.source.get(`/menus/${state.theme.menuUrl}`).items;
+	const currURL = state.router.link;
+	const items = state.source.get(`/menus/${state.theme.menuUrl}`).items;
+	const [cookies, setCookie] = useCookies(['iswalletconnected', 'iswhitelisted'])
 
-  // Connect Wallet
-  const connectWallet = (e) => {
-    e.preventDefault()
-    console.log('Call event for Connect Wallet');
-  };
+	// Connect Wallet
+	const connectWallet = (e) => {
+		e.preventDefault()
+		setCookie("iswalletconnected", 1, {
+			path: "/"
+		});
+		setCookie("iswhitelisted", 1, {
+			path: "/"
+		});
+	};
 
-  return(
-    <ul className="header_menu_list">
-      {items.map((item)=>{
-         return(
-          <li key={item.ID} className={(currURL === '/'+item.slug+'/') ? "active" : ""}>
-            <a href={item.url}>
-              {item.title}
-            </a>
-          </li>
-         )
-      })}
-      <li key="custom">
-        <a onClick={connectWallet}>Connect Wallet</a>
-      </li>
-    </ul>
-  )
+	return(
+		<ul className="header_menu_list">
+		{items.map((item)=>{
+			return(
+			<li key={item.ID} className={(currURL === '/'+item.slug+'/') ? "active" : ""}>
+				<a href={item.url}> {item.title}</a>
+			</li>
+			)
+		})}
+			<li key="custom">
+				<a onClick={connectWallet}>Connect Wallet</a>
+			</li>
+		</ul>
+	)
 };
 
 export default connect(Nav);
