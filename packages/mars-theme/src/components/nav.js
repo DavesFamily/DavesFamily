@@ -1,43 +1,112 @@
-import { connect, styled } from "frontity";
-import React, {useEffect } from 'react';
+import {
+  connect,
+  styled
+} from "frontity";
 import Link from "./link";
-import {cookie, useCookies } from "react-cookie";
+import {
+  useEffect,
+  useState
+} from "react"
+import {
+  cookie,
+  useCookies
+} from "react-cookie";
+
+import {
+  connectWallet,
+  getCurrentWalletConnected,
+  checkWhitelisted
+} from "../ethers/interact.js";
 
 /**
  * Navigation Component
  *
  * It renders the navigation links
  */
-const Nav = ({ state, actions }) => {
-	const currURL = state.router.link;
-	const items = state.source.get(`/menus/${state.theme.menuUrl}`).items;
-	const [cookies, setCookie] = useCookies(['iswalletconnected', 'iswhitelisted'])
+const Nav = ({
+    state,
+    actions
+  }) => {
+    const currURL = state.router.link;
+    const items = state.source.get(`/menus/${state.theme.menuUrl}`).items;
 
-	// Connect Wallet
-	const connectWallet = (e) => {
-		e.preventDefault()
-		setCookie("iswalletconnected", 1, {
-			path: "/"
-		});
-		setCookie("iswhitelisted", 1, {
-			path: "/"
-		});
-	};
+    const [walletAddress, setWalletAddress] = useState("");
+    const [status, setStatus] = useState("");
+    // const [whitelisted, setWhiteListed] = useState(0)
+    const [cookies, setCookie] = useCookies(['iswhitelisted']);
 
-	return(
-		<ul className="header_menu_list">
-		{items.map((item)=>{
-			return(
-			<li key={item.ID} className={(currURL === '/'+item.slug+'/') ? "active" : ""}>
-				<a href={item.url}> {item.title}</a>
-			</li>
-			)
-		})}
-			<li key="custom">
-				<a onClick={connectWallet}>Connect Wallet</a>
-			</li>
-		</ul>
-	)
+    const connectWalletPressed = async (e) => {
+      // Call event for Connect Wallet
+      e.preventDefault()
+      // Comming walletResponse object {address, status}
+      const walletResponse = await connectWallet();
+      setWalletAddress(walletResponse.address);
+    };
+
+    useEffect(async () => {
+      const {
+        address,
+        status
+      } = await getCurrentWalletConnected();
+
+      setWalletAddress(address);
+      
+      addWalletListener();
+      /**
+       * Set cookies according to the results.
+       * If account is whitelisted, then `checkWhitelisted()` function
+       *  should return reserved amounts.
+       * If it is not whitelisted, then returns 0
+       */
+      const res = await checkWhitelisted();
+      (res) ? setCookie('iswhitelisted', '1', {
+        path: '/'
+      }): setCookie('iswhitelisted', '0', {
+        path: '/'
+      })
+      }, [])
+
+    const addWalletListener = () => {
+      if (window.ethereum) {
+        window.ethereum.on("accountsChanged", (accounts) => {
+          if (accounts.length > 0) {
+            setWalletAddress(accounts[0]);
+            setStatus("Wallet connected");
+          } else {
+            setWalletAddress("");
+            setStatus("Wallet not connected");
+          }
+        });
+      } else {
+        setStatus("Make sure Metamask installed first");
+      }
+    }
+
+
+  return(
+    <ul className="header_menu_list">
+      {items.map((item)=>{
+         return(
+          <li key={item.ID} className={(currURL === '/'+item.slug+'/') ? "active" : ""}>
+            <a href={item.url}>
+              {item.title}
+            </a>
+          </li>
+         )
+      })}
+      <li key="custom">
+        <a onClick={connectWalletPressed}>{
+        (walletAddress.length > 0) ? (
+          "Connected:"+String(walletAddress).substring(0,6) + 
+          "..." + 
+          String(walletAddress).substring(38)
+        ):(
+          <span>Connect Wallet</span>
+          )
+        }</a>
+      </li>
+    </ul>
+  )
 };
 
 export default connect(Nav);
