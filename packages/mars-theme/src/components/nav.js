@@ -33,7 +33,7 @@ const Nav = ({
     const [walletAddress, setWalletAddress] = useState("");
     const [status, setStatus] = useState("");
     // const [whitelisted, setWhiteListed] = useState(0)
-    const [cookies, setCookie] = useCookies(['iswhitelisted']);
+    const [cookies, setCookie] = useCookies(['iswalletconnected', 'iswhitelisted']);
 
     const connectWalletPressed = async (e) => {
       // Call event for Connect Wallet
@@ -41,6 +41,25 @@ const Nav = ({
       // Comming walletResponse object {address, status}
       const walletResponse = await connectWallet();
       setWalletAddress(walletResponse.address);
+
+      if(walletResponse.address) {
+        // Set iswalletconnected Cookie
+        setCookie('iswalletconnected', '1', {
+          path: '/'
+        });
+
+        // Check Is Whitelisted and Set iswhitelisted Cookie
+        const res = await checkWhitelisted();
+
+        (res) ? setCookie('iswhitelisted', '1', {
+          path: '/'
+        }): setCookie('iswhitelisted', '0', {
+          path: '/'
+        })
+
+        // Redirect to Mint Page
+        actions.router.set("/mint/"); 
+      }
     };
 
     useEffect(async () => {
@@ -52,6 +71,14 @@ const Nav = ({
       setWalletAddress(address);
       
       addWalletListener();
+
+      // Set iswalletconnected Cookie
+      if(address.length>0) {
+        setCookie('iswalletconnected', '1', {
+          path: '/'
+        })
+      }
+
       /**
        * Set cookies according to the results.
        * If account is whitelisted, then `checkWhitelisted()` function
@@ -59,11 +86,13 @@ const Nav = ({
        * If it is not whitelisted, then returns 0
        */
       const res = await checkWhitelisted();
+
       (res) ? setCookie('iswhitelisted', '1', {
         path: '/'
       }): setCookie('iswhitelisted', '0', {
         path: '/'
       })
+
       }, [])
 
     const addWalletListener = () => {
@@ -82,10 +111,10 @@ const Nav = ({
       }
     }
 
-
   return(
     <ul className="header_menu_list">
       {items.map((item)=>{
+        if((walletAddress.length > 0 && item.title==='Mint') || item.title!=='Mint') {
          return(
           <li key={item.ID} className={(currURL === '/'+item.slug+'/') ? "active" : ""}>
             <a href={item.url}>
@@ -93,6 +122,7 @@ const Nav = ({
             </a>
           </li>
          )
+        }
       })}
       <li key="custom">
         <a onClick={connectWalletPressed}>{

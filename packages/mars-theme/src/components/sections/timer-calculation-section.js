@@ -7,9 +7,15 @@ import Slider from "react-slick";
 import Image from "@frontity/components/image";
 
 /** About Component - It renders the About Section  **/
-const MintSection = ({ state, libraries, contentBlock }) => {
+const MintSection = ({ state, libraries, actions, contentBlock }) => {
 
   const Html2React = libraries.html2react.Component;
+
+  const [cookies, setCookie] = useCookies(['iswalletconnected', 'iswhitelisted'])
+
+  /*if(cookies.iswalletconnected===undefined) {
+    actions.router.set("/");
+  }*/
 
    const settings = {
     dots: false,
@@ -22,8 +28,6 @@ const MintSection = ({ state, libraries, contentBlock }) => {
     draggable: false,
     arrows: false
   };
-
-  const [cookies, setCookie] = useCookies(['iswalletconnected', 'iswhitelisted'])
 
   const preSaleTime = contentBlock.pre_sale_datetime;
   const publicSaleTime = contentBlock.public_sale_datetime;
@@ -38,6 +42,17 @@ const MintSection = ({ state, libraries, contentBlock }) => {
 
 		return d;
 	}
+
+  function isFutureDate(date) {
+		var offerDate = new Date(date);
+		var todayDate = new Date();
+		
+		if(todayDate.getTime() <= offerDate.getTime()){
+			return true;
+		}
+		return false;
+	}
+	
 
   const renderer = ({ days, hours, minutes, seconds, completed, props, formatted }) => {
 
@@ -78,12 +93,12 @@ const MintSection = ({ state, libraries, contentBlock }) => {
                         <div className="fild-main-inner-cls">
                           <CalculationSection contentBlock={contentBlock} />
                         </div>
-                        {cookies.iswhitelisted==='1' && preSaleTime && (
+                        {cookies.iswhitelisted==='1' && preSaleTime && isFutureDate(preSaleTime) && (
                           <div className="fild-main-inner-cls Countdown-main-inner-cls">
                               <span><Countdown date={preSaleTime} label={contentBlock.pre_sale_label} date={preSaleTime} zeroPadTime="2"  renderer={renderer}></Countdown></span>
                           </div>
                         )}
-                        {cookies.iswhitelisted==='0' && publicSaleTime && 
+                        {cookies.iswhitelisted==='0' && publicSaleTime && isFutureDate(publicSaleTime) && 
                           (
                             <div className="fild-main-inner-cls Countdown-main-inner-cls">
                               <span><Countdown date={publicSaleTime} label={contentBlock.public_sale_label} date={publicSaleTime}  zeroPadTime="2" renderer={renderer}></Countdown></span>
