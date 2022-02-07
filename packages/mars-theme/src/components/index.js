@@ -43,6 +43,7 @@ const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
 
+  const curentURL = state.router.link;
   return (
     <>
       {/* Add some metatags to the <head> of the HTML. */}
@@ -70,8 +71,8 @@ const Theme = ({ state }) => {
         <Switch>
           <Loading when={data.isFetching} />
           <Home when={data.isHome} />
-          <GeneralPage when={data.isPage && state.router.link==='/react-home/'} />
-          <GeneralPage when={data.isPage && state.router.link==='/mint/'} />
+          <GeneralPage when={data.isPage && curentURL.includes('/react-home/')} />
+          <GeneralPage when={data.isPage && curentURL.includes('/mint/')} />
          {/* <List when={data.isArchive} />*/}
           <Post when={data.isPostType} />
           <PageError when={data.isError} />

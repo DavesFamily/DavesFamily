@@ -115,10 +115,11 @@ const Nav = ({
     <ul className="header_menu_list">
       {items.map((item)=>{
         if((walletAddress.length > 0 && item.title==='Mint') || item.title!=='Mint') {
+          var menuURL = (currURL.includes('/react-home/')===false && item.url.includes("#"))?'/react-home/'+item.url:item.url;
          return(
           <li key={item.ID} className={(currURL === '/'+item.slug+'/') ? "active" : ""}>
-            <a href={item.url}>
-              {item.title}
+            <a href={menuURL}>
+            {item.title}
             </a>
           </li>
          )
