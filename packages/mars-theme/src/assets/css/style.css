@@ -100,6 +100,12 @@ body .roadmap-sec .sub_tlt{font-size: 24px;}
 .roadmap-sec .box-video video {width: 100%;}
 
 .welcome-sec.mint-page .row {align-items: center;}
+@media (max-width: 1300px){
+.fild-main-inner-cls .counterDisplay {flex-direction: column; }
+.fild-main-inner-cls .counterDisplay label{margin-right: 0px;}
+.count-input-div{margin: 15px 0;}
+.fild-main-inner-cls .counterDisplay .auto-add-count button{margin: 0 5px;}
+}
 
 @media (max-width: 1200px){
 .count-input-div{padding: 10px;}
