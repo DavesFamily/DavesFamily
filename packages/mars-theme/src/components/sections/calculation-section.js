@@ -56,8 +56,8 @@ const About = ({ state, libraries, contentBlock }) => {
                     </div>
                     <div className="auto-add-count">
                       <button onClick={()=>{quickCalc(5)}}>5</button>
-                      <button onClick={()=>{quickCalc(10)}}>10</button>
-                      <button onClick={()=>{quickCalc(15)}}>15</button>
+                      <button className="clr-cian" onClick={()=>{quickCalc(10)}}>10</button>
+                      <button className="clr-yellow" onClick={()=>{quickCalc(15)}}>15</button>
                     </div>
                 </div>
                 <div className="total-banace-cls">

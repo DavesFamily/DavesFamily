@@ -228,6 +228,8 @@ body{overflow-x: hidden; }
 .fild-main-inner-cls .counterDisplay button.button-plus {color: #e883bb; }
 .count-input-div input[type="text"] {text-align: center; border: 0; font-family: 'Roboto',sans-serif; font-size: 20px; font-weight: 800; max-width: 60px; padding: 0; box-shadow: none; background: transparent; outline: 0; }
 .fild-main-inner-cls .counterDisplay .auto-add-count button {background: #424472; color: #e883bb; box-shadow: none; border: 0; padding: 15px 0; margin: 0 0 0 10px; border-radius: 5px; font-family: 'Roboto',sans-serif; font-weight: 600; font-size: 20px; width:50px;text-align: center;}
+.fild-main-inner-cls .counterDisplay .auto-add-count button.clr-cian{color:#3fb8b4;}
+.fild-main-inner-cls .counterDisplay .auto-add-count button.clr-yellow{color:#fc0;}
 .total-text-cls {display: flex; justify-content: space-between; color: #fff; font-family: 'alphakind',Helvetica,Arial,Lucida,sans-serif; font-size: 20px; padding: 0px 0px 30px; }
 .total-text-cls span {font-family: 'alphakind',Helvetica,Arial,Lucida,sans-serif; color: #e883bb;}
 .button-cls button.AddBtn {width: 100%; background: #e883bb; border: 0; box-shadow: none; padding: 20px 20px; border-radius: 50px; color: #fff; letter-spacing: 1px; margin-bottom: 5px;}
