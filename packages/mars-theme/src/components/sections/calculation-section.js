@@ -3,7 +3,7 @@ import React, {useState, useRef } from 'react';
 import {mintPresale} from '../../ethers/interact.js'
 
 
-/** About Component - It renders the About Section  **/
+/** Mint Calculation Component - It renders the Calculation Section  **/
 const About = ({ state, libraries, contentBlock }) => {
 
     const ethVal = contentBlock.eth_per_item;
@@ -11,12 +11,11 @@ const About = ({ state, libraries, contentBlock }) => {
     const [count, setCount] = useState(1);
     const [currentSum, setCurrentSum] = useState(ethVal);
 
-     // Load the post, but only if the data is ready.
      function handlePlus() {
        var tempCnt = count;
        if(count === null || count === ""){
          tempCnt = 1;
-       } else if(count<5){
+       } else if(count<15){
          tempCnt = count+1;
        }
        setCount(tempCnt);
@@ -43,7 +42,7 @@ const About = ({ state, libraries, contentBlock }) => {
      }
 
      function mintBtnPressed() {
-       mintPresale(count)
+          mintPresale(count)
      }
 
   return (
@@ -56,7 +55,9 @@ const About = ({ state, libraries, contentBlock }) => {
                     <button className="button-plus" onClick={handlePlus}>+</button>
                     </div>
                     <div className="auto-add-count">
-                    <button onClick={()=>{quickCalc(5)}}>5</button>
+                      <button onClick={()=>{quickCalc(5)}}>5</button>
+                      <button onClick={()=>{quickCalc(10)}}>10</button>
+                      <button onClick={()=>{quickCalc(15)}}>15</button>
                     </div>
                 </div>
                 <div className="total-banace-cls">

@@ -1,5 +1,5 @@
 import { connect } from "frontity";
-import {  useState } from "react";
+/*import {  useState } from "react";
 import Image from "@frontity/components/image";
 import {
   CircularProgressbar,
@@ -8,26 +8,27 @@ import {
 } from "react-circular-progressbar";
 import AnimatedProgressProvider from "./AnimatedProgressProvider";
 import VisibilitySensor from "react-visibility-sensor/visibility-sensor";
-import { easeQuadInOut } from "d3-ease";
+import { easeQuadInOut } from "d3-ease";*/
 
 /** RoadMap Component - It renders the Roadmap Section  **/
 const RoadMap = ({ state, libraries, contentBlock }) => {
 
-  const Html2React = libraries.html2react.Component;
+  /*const Html2React = libraries.html2react.Component;
   const [visibleCounters, setVisibleCounters] = useState([]);
 
   const markAsLoaded = (index) => {
 
     if(visibleCounters<index)
       setVisibleCounters([...visibleCounters,index])
-  }
+  }*/
 
   return(
   <div id="roadmap" className="roadmap-sec paddtop100 paddbottom100" style={{  backgroundImage: `url(${contentBlock.background_image})`}}>
         <div className="container">
           <div className="row">
             <div className="col-sm-12">
-              <div>
+              <h1 className="paddbottom10 clryellow text-center" >{contentBlock.heading}</h1>
+              {/*<div>
                 <h1 className="paddbottom10 clryellow text-center" >{contentBlock.heading}</h1>
                 <h3 className="paddbottom10 clryellow text-center" >{contentBlock.sub_heading}</h3>
                 <p className="clrwhite text-center">{contentBlock.description}</p>
@@ -56,8 +57,7 @@ const RoadMap = ({ state, libraries, contentBlock }) => {
                                 <CircularProgressbarWithChildren
                                   value={value}
                                   text={`${roundedValue}%`}
-                                  /* This is important to include, because if you're fully managing the
-                                 animation yourself, you'll want to disable the CSS animation. */
+                                  
                                   styles={buildStyles({ pathTransition: "none", textSize: '24px'})}
                                 >
                                   <span className="counter-text">{content.percentage_text}</span>
@@ -85,13 +85,15 @@ const RoadMap = ({ state, libraries, contentBlock }) => {
                   <div className="looking-detail-cls clrwhite"><Html2React html={contentBlock.bottom_description} /></div>
                </div>
               
+            </div>*/}
             </div>
-            </div>
-            
           </div>
-          
         </div>
-      
+        <div className="box-video paddtop10">	
+          <video autoPlay={true} muted loop="true">
+            <source src={contentBlock.video.url} type="video/mp4"/>
+          </video> 
+        </div>
       </div>
 )};
 
