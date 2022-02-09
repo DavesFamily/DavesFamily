@@ -23,11 +23,11 @@ const RoadMap = ({ state, libraries, contentBlock }) => {
   }*/
 
   return(
-  <div id="roadmap" className="roadmap-sec paddtop100 paddbottom100" style={{  backgroundImage: `url(${contentBlock.background_image})`}}>
+  <div id="roadmap" className="roadmap-sec paddtop80 paddbottom100" style={{  backgroundImage: `url(${contentBlock.background_image})`}}>
         <div className="container">
           <div className="row">
             <div className="col-sm-12">
-              <h1 className="paddbottom10 clryellow text-center" >{contentBlock.heading}</h1>
+              <h1 className="paddbottom50 clryellow text-center" >{contentBlock.heading}</h1>
               {/*<div>
                 <h1 className="paddbottom10 clryellow text-center" >{contentBlock.heading}</h1>
                 <h3 className="paddbottom10 clryellow text-center" >{contentBlock.sub_heading}</h3>
