@@ -19,7 +19,7 @@ const Team = ({ state, libraries, contentBlock }) => {
                   return(
                     <div key={index}>
                       <div className="team_img">
-                        <Image src={content.image.sizes.medium} />
+                        <Link link={content.link}><Image src={content.image.sizes.medium} /></Link>
                       </div>
                       <h3 className="team_title"><Link link={content.link}>{content.name}</Link></h3>
                     </div>

@@ -23,7 +23,7 @@ const RoadMap = ({ state, libraries, contentBlock }) => {
   }*/
 
   return(
-  <div id="roadmap" className="roadmap-sec paddtop80 paddbottom100" style={{  backgroundImage: `url(${contentBlock.background_image})`}}>
+  <div id="roadline" className="roadmap-sec paddtop80 paddbottom100" style={{  backgroundImage: `url(${contentBlock.background_image})`}}>
         <div className="container">
           <div className="row">
             <div className="col-sm-12">
@@ -89,11 +89,13 @@ const RoadMap = ({ state, libraries, contentBlock }) => {
             </div>
           </div>
         </div>
-        <div className="box-video paddtop10">	
-          <video autoPlay={true} muted loop="true">
-            <source src={contentBlock.video.url} type="video/mp4"/>
-          </video> 
-        </div>
+        <div className="container">
+			<div className="box-video paddtop10">
+				<video autoPlay={true} muted loop="true">
+					<source src={contentBlock.video.url} type="video/mp4"/>
+				</video> 
+			</div>
+		</div>
       </div>
 )};
 
