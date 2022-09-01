@@ -76,7 +76,7 @@ body .welcome-sec h2 {text-shadow: none; }
 body .welcome-sec.mint-page h2 {font-size:32px;}
 body .welcome-sec.mint-page h3 {font-size:22px;}
 .welcome-sec .welcome-slider-main-sec img {width: 70%; margin: 0 auto; }
-body .welcome-sec {display: inline-block; width: 100%; background-size: contain; background-position: top right; background-image: linear-gradient(90deg,#ffcc00 40%,rgba(255,204,0,0) 100%),url(https://daves.family/wp-content/uploads/2021/11/splatter-296412.png)!important; background-color: #ffcc00!important; }
+body .welcome-sec {display: inline-block; width: 100%; background-size: contain; background-position: top right; background-image: linear-gradient(90deg,#ffcc00 40%,rgba(255,204,0,0) 100%),url(http://wp.daves.family/wp-content/uploads/2021/11/splatter-296412.png)!important; background-color: #ffcc00!important; }
 body .welcome-sec .description {font-size: 24px; line-height: 1.5; color: #333;margin-bottom: 20px; }
 body .welcome-sec.mint-page .description {font-size: 18px;}
 body .welcome-sec .subheading {font-weight: 600; font-size: 24px; line-height: 1.4em; color: #333; }
@@ -88,7 +88,7 @@ body .welcome-sec .subheading {font-weight: 600; font-size: 24px; line-height: 1
 .welcome-slider-main-sec ul li.social-dbdb-discord a:before {content: "\e01d"; text-align:center; font-family: "Socicon"!important; background-color: #7289da!important; padding: 0; box-sizing: content-box; height: 32px; width: 32px; font-size: 16px; line-height: 32px; display: block; color: #fff; transition: color .3s; position: relative; z-index: 10; border-radius: 3px;}
 .welcome-slider-main-sec ul li.social-twitter a:before {content: "\e094"; text-align:center; font-family: ETmodules;; background-color: #00aced!important; padding: 0; box-sizing: content-box; height: 32px; width: 32px; font-size: 16px; line-height: 32px; display: block; color: #fff; transition: color .3s; position: relative; z-index: 10; border-radius: 3px;}
 body .welcome-sec {margin-top: -50px; }
-body .about-sec {background-size: contain; background-position: top right; background-repeat: no-repeat; background-blend-mode: luminosity; background-image: url(https://daves.family/wp-content/uploads/2021/11/splatter-296412-1024x734.png)!important; background-color: #af5ea1!important; }
+body .about-sec {background-size: contain; background-position: top right; background-repeat: no-repeat; background-blend-mode: luminosity; background-image: url(http://wp.daves.family/wp-content/uploads/2021/11/splatter-296412-1024x734.png)!important; background-color: #af5ea1!important; }
 body .about-sec .container {background-image: radial-gradient(circle at center,#af5ea1 20%,rgba(175,0,167,0) 100%); background-size: cover; background-size: cover; background-position: 50%; background-repeat: no-repeat;}/* background changes  */
 body .about-sec .row{margin: 0px;}
 body .about-sec .left-img {padding: 0; }
@@ -145,7 +145,7 @@ body .roadmap-sec .sub_tlt{font-size: 24px;}
 .percentage-main-sec-cls .percentage-cls .percentage-inner-cls .CircularProgressbar-path {stroke: #fc0; stroke-width: 5px; }
 .percentage-main-sec-cls .percentage-cls .percentage-inner-cls .CircularProgressbar .CircularProgressbar-trail {stroke: #5251a3; stroke-width: 5px; }
 
-body .story-sec {background-size: contain; background-position: bottom left; background-blend-mode: darken; background-image: url(https://daves.family/wp-content/uploads/2021/11/ink-42357-805x1024.png)!important; background-color: #336799!important; background-repeat: no-repeat; }
+body .story-sec {background-size: contain; background-position: bottom left; background-blend-mode: darken; background-image: url(http://wp.daves.family/wp-content/uploads/2021/11/ink-42357-805x1024.png)!important; background-color: #336799!important; background-repeat: no-repeat; }
 body .story-sec .description p {line-height: 1.6; }
 body .story-sec img {width: 100%; }
 

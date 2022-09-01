@@ -104,7 +104,7 @@ const globalStyles = css`
     font-family:ETmodules;
     font-display:block;
     src:url("${ModulesEOT}");
-    src:url("${ModulesEOT}?#iefix") format("embedded-opentype"),url("${ModulesTTF}") format("truetype"),url("${ModulesWOFF}") format("woff"),url(https//daves.family/wp-content/themes/Divi/core/admin/fonts/modules/all/modules.svg#ETmodules) format("svg");
+    src:url("${ModulesEOT}?#iefix") format("embedded-opentype"),url("${ModulesTTF}") format("truetype"),url("${ModulesWOFF}") format("woff"),url(http//wp.daves.family/wp-content/themes/Divi/core/admin/fonts/modules/all/modules.svg#ETmodules) format("svg");
     font-weight:400;
     font-style:normal
   }
@@ -116,7 +116,7 @@ const globalStyles = css`
     url('${SociconWOFF2}?87visu') format('woff2'),
     url('${SociconTTF}?87visu') format('truetype'),
     url('${SociconWOFF}?87visu') format('woff'),
-    url('https://daves.family/wp-content/plugins/divi-booster/core/icons/socicon/fonts/Socicon.svg?87visu#Socicon') format('svg');
+    url('http://wp.daves.family/wp-content/plugins/divi-booster/core/icons/socicon/fonts/Socicon.svg?87visu#Socicon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;

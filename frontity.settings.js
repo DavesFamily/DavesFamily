@@ -2,7 +2,7 @@ const settings = {
   "name": "daves",
   "state": {
     "frontity": {
-      "url": "https://daves.family/",
+      "url": "http://wp.daves.family/",
       "title": "Daves Family",
       "description": "Daves Family"
     }
@@ -25,7 +25,7 @@ const settings = {
       "state": {
         "source": {
           "url": "https://daves.family",
-          "api": "https://daves.family/wp-json",
+          "api": "https://wp.daves.family/wp-json",
           "homepage": "/home",
           "postsPage":"/",
           "reactHome":"/react-home/",
