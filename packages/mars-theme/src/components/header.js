@@ -45,7 +45,7 @@ const Header = ({ state }) => {
         <div className="header_wrap container">
           <div className="header_inner row">
             <div className="header_logo">
-              <Link link={state.source.reactHome}>
+              <Link link={state.source.url}>
                 <img src={logoImage} />
               </Link>
             </div>
@@ -55,7 +55,7 @@ const Header = ({ state }) => {
           </div>
           <div className="mobile-menu-wrap">
             <div className="header_logo mobile">
-              <Link link={state.source.reactHome}>
+              <Link link={state.source.url}>
                 <img src={logoImage} />
               </Link>
             </div>

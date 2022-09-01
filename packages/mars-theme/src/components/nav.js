@@ -110,8 +110,8 @@ const Nav = ({ state, actions }) => {
           item.title !== "Mint"
         ) {
           var menuURL =
-            currURL.includes("/react-home/") === false && item.url.includes("#")
-              ? "/react-home/" + item.url
+            currURL.includes("/") === false && item.url.includes("#")
+              ? "/" + item.url
               : item.url;
           return (
             <li

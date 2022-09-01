@@ -29,16 +29,6 @@ const settings = {
           "homepage": "/home",
           "postsPage":"/",
           "reactHome":"/react-home/",
-          "data": {
-				"/": {
-				"isReady": true,
-				"isRedirection": true,
-				"is301": false,
-				"redirectionStatus": 201,
-				"isExternal": false,
-				"location": "/react-home",
-				},
-			},
         }
       }
     },

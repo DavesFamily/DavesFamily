@@ -71,8 +71,7 @@ const Theme = ({ state }) => {
         <Switch>
           <Loading when={data.isFetching} />
           <Home when={data.isHome} />
-          <GeneralPage when={data.isPage && curentURL.includes('/react-home/')} />
-          <GeneralPage when={data.isPage && curentURL.includes('/mint/')} />
+          <GeneralPage when={data.isPage && curentURL.includes('/')} />
          {/* <List when={data.isArchive} />*/}
           <Post when={data.isPostType} />
           <PageError when={data.isError} />
